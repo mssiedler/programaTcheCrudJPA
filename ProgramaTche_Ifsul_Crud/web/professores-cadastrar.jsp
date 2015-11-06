@@ -4,11 +4,9 @@
             
             <div>
                 
-                <form action="professores-cadastrar-ok.jsp">
-                    <label>Nome:</label><input type="text" /><br />
-                    <label>Matrícula</label><input type="text" /><br />
-                    <label>Num. Disciplinas</label><input type="text" /><br />
-                    <label>Ativo</label><input type="checkbox" /><br />
+                <form action="professores-cadastrar-ok.jsp" method="post">
+                    <label>Siape:</label><input type="text" name="txtSiape"/><br />
+                    <label>Nome:</label><input type="text" name="txtNome" /><br />
                     <input type="reset" value="Limpar" />
                     <input type="submit" value="Cadastrar" />
                 </form>

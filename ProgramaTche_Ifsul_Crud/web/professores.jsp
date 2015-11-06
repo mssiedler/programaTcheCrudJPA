@@ -1,4 +1,14 @@
+<%@page import="modelo.Professor"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.List"%>
+<%@page import="dao.ProfessorDAO"%>
 <%@include file="cabecalho.jsp"%>
+<%
+ProfessorDAO dao = new ProfessorDAO();
+
+List<Professor> lista = dao.listar();
+
+%>
         <div>
             <h1 class="centro">Professores</h1>
             
@@ -14,38 +24,21 @@
                             
                             <th>Ações</th>
                         </tr>
+                        <%
+                        for(Professor item:lista)
+                        {
+                        %>
                         <tr>
-                            <td>123</td>
-                            <td>Alex</td>
-                            <td><a href="professores-editar.jsp?siape=123">Editar</a>
-                                <a href="professores-excluir-ok.jsp?siape=123">Excluir</a>
+                            <td><%=item.getSiape()%></td>
+                            <td><%=item.getNome()%></td>
+                            <td><a href="professores-editar.jsp?siape=<%=item.getSiape()%>">Editar</a>
+                                <a href="professores-excluir-ok.jsp?siape=<%=item.getSiape()%>">Excluir</a>
                             </td>
                             
                         </tr>
-                        <tr>
-                            <td>999</td>
-                            <td>Marcelo</td>
-                            <td><a href="professres-editar.jsp">Editar</a>
-                                <a href="professores-excluir-ok.jsp?siape=999">Excluir</a>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>xxxxxx</td>
-                            <td><a href="professres-editar.jsp">Editar</a>
-                                <a href="professores-excluir.jsp">Excluir</a>
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>xxxxxx</td>
-                            <td><a href="professres-editar.jsp">Editar</a>
-                                <a href="professores-excluir.jsp">Excluir</a>
-                            </td>
-                            
-                        </tr>
+                       <%
+                        }
+                       %>
                     </table>
                     
                 </form>

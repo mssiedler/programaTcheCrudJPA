@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/marcelosiedler/Documents/GITHUB/ProgramaTche_Ifsul_Crud/src/java/modelo/Aluno.java</file>
-            <file>file:/Users/marcelosiedler/Documents/GITHUB/ProgramaTche_Ifsul_Crud/src/conf/persistence.xml</file>
-            <file>file:/Users/marcelosiedler/Documents/GITHUB/ProgramaTche_Ifsul_Crud/src/java/modelo/Curso.java</file>
-            <file>file:/Users/marcelosiedler/Documents/GITHUB/ProgramaTche_Ifsul_Crud/src/java/dao/Conexao.java</file>
-            <file>file:/Users/marcelosiedler/Documents/GITHUB/ProgramaTche_Ifsul_Crud/src/java/modelo/Disciplina.java</file>
+            <file>file:/Users/marcelosiedler/Documents/GITHUB/programaTcheCrudJPA/ProgramaTche_Ifsul_Crud/web/professores-cadastrar.jsp</file>
+            <file>file:/Users/marcelosiedler/Documents/GITHUB/programaTcheCrudJPA/ProgramaTche_Ifsul_Crud/web/professores.jsp</file>
+            <file>file:/Users/marcelosiedler/Documents/GITHUB/programaTcheCrudJPA/ProgramaTche_Ifsul_Crud/src/java/modelo/Professor.java</file>
+            <file>file:/Users/marcelosiedler/Documents/GITHUB/programaTcheCrudJPA/ProgramaTche_Ifsul_Crud/src/java/dao/ProfessorDAO.java</file>
+            <file>file:/Users/marcelosiedler/Documents/GITHUB/programaTcheCrudJPA/ProgramaTche_Ifsul_Crud/src/java/dao/AlunoDAO.java</file>
+            <file>file:/Users/marcelosiedler/Documents/GITHUB/programaTcheCrudJPA/ProgramaTche_Ifsul_Crud/web/professores-excluir-ok.jsp</file>
+            <file>file:/Users/marcelosiedler/Documents/GITHUB/programaTcheCrudJPA/ProgramaTche_Ifsul_Crud/web/professores-cadastrar-ok.jsp</file>
         </group>
     </open-files>
 </project-private>
