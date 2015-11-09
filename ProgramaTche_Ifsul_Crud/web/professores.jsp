@@ -6,7 +6,19 @@
 <%
 ProfessorDAO dao = new ProfessorDAO();
 
-List<Professor> lista = dao.listar();
+List<Professor> lista;
+//Verificar se veio algo do filtro, 
+//se vier eu filtro pro nome
+//caso contrário eu trago todos os professores
+if(request.getParameter("txtFiltro")!=null && request.getParameter("txtFiltro")!="")
+{
+    String txtFiltro = request.getParameter("txtFiltro");
+    lista = dao.listar(txtFiltro);
+}
+else
+{
+    lista = dao.listar();
+}
 
 %>
         <div>
@@ -14,9 +26,16 @@ List<Professor> lista = dao.listar();
             
             <div>
                 +<a href="professores-cadastrar.jsp">Novo Professor</a><br />
-                <form>
-                    <input type="text" />
+                
+                 
+                <form action="professores.jsp" method="post">
+                    <input type="text" name="txtFiltro" />
                     <input type="submit" value="Pesquisar"/><br />
+                </form>
+               
+                 
+                
+                
                     <table>
                         <tr>
                             <th>Siape</th>
@@ -31,7 +50,7 @@ List<Professor> lista = dao.listar();
                         <tr>
                             <td><%=item.getSiape()%></td>
                             <td><%=item.getNome()%></td>
-                            <td><a href="professores-editar.jsp?siape=<%=item.getSiape()%>">Editar</a>
+                            <td><a href="professores-atualizar.jsp?siape=<%=item.getSiape()%>">Editar</a>
                                 <a href="professores-excluir-ok.jsp?siape=<%=item.getSiape()%>">Excluir</a>
                             </td>
                             
@@ -41,7 +60,7 @@ List<Professor> lista = dao.listar();
                        %>
                     </table>
                     
-                </form>
+                
             </div>
         </div>
     </body>
