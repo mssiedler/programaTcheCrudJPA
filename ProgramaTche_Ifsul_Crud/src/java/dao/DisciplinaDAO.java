@@ -5,24 +5,26 @@
  */
 
 package dao;
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import modelo.Aluno;
+import modelo.Disciplina;
+
 /**
  *
  * @author marcelosiedler
  */
-public class AlunoDAO {
+public class DisciplinaDAO {
     EntityManager em;
     
-    public AlunoDAO() throws Exception {
+    public DisciplinaDAO() throws Exception {
         EntityManagerFactory emf;
         emf = Conexao.getConexao();
         em = emf.createEntityManager();
     }
     
-    public void incluir(Aluno obj) throws Exception {
+    public void incluir(Disciplina obj) throws Exception {
         try {
             em.getTransaction().begin();
             em.persist(obj);
@@ -37,11 +39,11 @@ public class AlunoDAO {
         
     }
 
-    public List<Aluno> listar() throws Exception {
-        return em.createNamedQuery("Aluno.findAll").getResultList();
+    public List<Disciplina> listar() throws Exception {
+        return em.createNamedQuery("Disciplina.findAll").getResultList();
     }
     
-    public void alterar(Aluno obj) throws Exception {
+    public void alterar(Disciplina obj) throws Exception {
         
         try {
             em.getTransaction().begin();
@@ -55,7 +57,7 @@ public class AlunoDAO {
         }
     }
     
-    public void excluir(Aluno obj) throws Exception {
+    public void excluir(Disciplina obj) throws Exception {
         
         try {
             em.getTransaction().begin();
@@ -68,15 +70,14 @@ public class AlunoDAO {
         }
     }
     
-    public Aluno buscarPorChavePrimaria(String chave)
+   public Disciplina buscarPorChavePrimaria(Integer chave)
     {
-        return em.find(Aluno.class, chave);
+        return em.find(Disciplina.class, chave);
     }
 
     public void fechaEmf() {
         Conexao.closeConexao();
     }
     
-
 
 }

@@ -92,7 +92,7 @@ public class Professor implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Professor[ siape=" + siape + " ]";
+        return siape + " | "+nome;
     }
     
 }

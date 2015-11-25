@@ -5,24 +5,26 @@
  */
 
 package dao;
+
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import modelo.Aluno;
+import modelo.Curso;
+
 /**
  *
  * @author marcelosiedler
  */
-public class AlunoDAO {
+public class CursoDAO {
     EntityManager em;
     
-    public AlunoDAO() throws Exception {
+    public CursoDAO() throws Exception {
         EntityManagerFactory emf;
         emf = Conexao.getConexao();
         em = emf.createEntityManager();
     }
     
-    public void incluir(Aluno obj) throws Exception {
+    public void incluir(Curso obj) throws Exception {
         try {
             em.getTransaction().begin();
             em.persist(obj);
@@ -37,11 +39,11 @@ public class AlunoDAO {
         
     }
 
-    public List<Aluno> listar() throws Exception {
-        return em.createNamedQuery("Aluno.findAll").getResultList();
+    public List<Curso> listar() throws Exception {
+        return em.createNamedQuery("Curso.findAll").getResultList();
     }
     
-    public void alterar(Aluno obj) throws Exception {
+    public void alterar(Curso obj) throws Exception {
         
         try {
             em.getTransaction().begin();
@@ -55,7 +57,7 @@ public class AlunoDAO {
         }
     }
     
-    public void excluir(Aluno obj) throws Exception {
+    public void excluir(Curso obj) throws Exception {
         
         try {
             em.getTransaction().begin();
@@ -67,16 +69,10 @@ public class AlunoDAO {
             em.close();
         }
     }
-    
-    public Aluno buscarPorChavePrimaria(String chave)
-    {
-        return em.find(Aluno.class, chave);
-    }
 
     public void fechaEmf() {
         Conexao.closeConexao();
     }
     
-
 
 }

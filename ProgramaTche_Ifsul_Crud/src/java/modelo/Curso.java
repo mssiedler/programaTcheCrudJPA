@@ -90,9 +90,9 @@ public class Curso implements Serializable {
         return true;
     }
 
-    @Override
+     @Override
     public String toString() {
-        return "modelo.Curso[ codigo=" + codigo + " ]";
+        return codigo + "/"+nome;
     }
     
 }
